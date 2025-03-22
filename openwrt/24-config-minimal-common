@@ -81,19 +81,30 @@ CONFIG_NGINX_STREAM_REAL_IP=y
 ### APPS
 CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-cpufreq=y
-CONFIG_PACKAGE_luci-app-ddns=y
+CONFIG_PACKAGE_luci-app-ddns=n
 CONFIG_PACKAGE_luci-app-diskman=y
 CONFIG_PACKAGE_luci-app-filemanager=y
 CONFIG_PACKAGE_luci-app-oaf=y
 CONFIG_PACKAGE_luci-app-ramfree=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-upnp=y
-CONFIG_PACKAGE_luci-app-webdav=y
+CONFIG_PACKAGE_luci-app-webdav=n
+CONFIG_PACKAGE_luci-app-adguardhome=y
+CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary=y
+
+CONFIG_PACKAGE_luci-app-arpbind=y
+
+CONFIG_PACKAGE_luci-app-smartdns=y
+CONFIG_PACKAGE_luci-app-turboacc=y
+CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_SHORTCUT_FE=y
+CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_BBR_CCA=y
+
+CONFIG_PACKAGE_luci-theme-design=y
 
 ### DDNS Scripts
-CONFIG_PACKAGE_ddns-scripts=y
-CONFIG_PACKAGE_ddns-scripts-aliyun=y
-CONFIG_PACKAGE_ddns-scripts-dnspod=y
+CONFIG_PACKAGE_ddns-scripts=n
+CONFIG_PACKAGE_ddns-scripts-aliyun=n
+CONFIG_PACKAGE_ddns-scripts-dnspod=n
 
 ### OpenSSL
 CONFIG_OPENSSL_ENGINE=y
