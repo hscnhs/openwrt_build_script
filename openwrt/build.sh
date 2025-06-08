@@ -20,13 +20,6 @@ endgroup() {
     GROUP=
 }
 
-# check
-if [ "$(whoami)" != "sbwml" ] && [ -z "$git_name" ] && [ -z "$git_password" ]; then
-    echo -e "\n${RED_COLOR} Not authorized. Execute the following command to provide authorization information:${RES}\n"
-    echo -e "${BLUE_COLOR} export git_name=your_username git_password=your_password${RES}\n"
-    exit 1
-fi
-
 #####################################
 #  NanoPi R4S OpenWrt Build Script  #
 #####################################
@@ -453,7 +446,7 @@ if [ "$platform" = "x86_64" ]; then
         if [ "$MINIMAL_BUILD" = "y" ]; then
             OTA_URL="https://x86.cooluc.com/d/minimal/openwrt-24.10"
         else
-            OTA_URL="https://github.com/sbwml/builder/releases/download"
+            OTA_URL="https://bgithub.xyz/sbwml/builder/releases/download"
         fi
         VERSION=$(sed 's/v//g' version.txt)
         SHA256=$(sha256sum bin/targets/x86/64*/*-generic-squashfs-combined-efi.img.gz | awk '{print $1}')
@@ -506,7 +499,7 @@ elif [ "$platform" = "armv8" ]; then
     {
       "build_date": "$CURRENT_DATE",
       "sha256sum": "$SHA256",
-      "url": "https://github.com/sbwml/builder/releases/download/v$VERSION/openwrt-$VERSION-armsr-armv8-generic-squashfs-combined-efi.img.gz"
+      "url": "https://bgithub.xyz/sbwml/builder/releases/download/v$VERSION/openwrt-$VERSION-armsr-armv8-generic-squashfs-combined-efi.img.gz"
     }
   ]
 }
@@ -535,7 +528,7 @@ elif [ "$platform" = "bcm53xx" ]; then
         if [ "$MINIMAL_BUILD" = "y" ]; then
             OTA_URL="https://r8500.cooluc.com/d/minimal/openwrt-24.10"
         else
-            OTA_URL="https://github.com/sbwml/builder/releases/download"
+            OTA_URL="https://bgithub.xyz/sbwml/builder/releases/download"
         fi
         VERSION=$(sed 's/v//g' version.txt)
         SHA256=$(sha256sum bin/targets/bcm53xx/generic/*-bcm53xx-generic-netgear_r8500-squashfs.chk | awk '{print $1}')
@@ -575,7 +568,7 @@ else
     # OTA json
     if [ "$1" = "rc2" ]; then
         mkdir -p ota
-        OTA_URL="https://github.com/sbwml/builder/releases/download"
+        OTA_URL="https://bgithub.xyz/sbwml/builder/releases/download"
         VERSION=$(sed 's/v//g' version.txt)
         if [ "$model" = "nanopi-r4s" ]; then
             [ "$MINIMAL_BUILD" = "y" ] && OTA_URL="https://r4s.cooluc.com/d/minimal/openwrt-24.10"
