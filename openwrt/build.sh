@@ -208,6 +208,9 @@ src-git routing https://$github/openwrt/routing.git$routing
 src-git telephony https://$github/openwrt/telephony.git$telephony
 EOF
 
+rm -rf feeds/smpackage/luci-theme-design && git clone -b js --single-branch https://github.com/kenzok78/luci-theme-design feeds/smpackage/luci-theme-design
+sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci/Makefile
+
 # Init feeds
 [ "$(whoami)" = "runner" ] && group "feeds update -a"
 ./scripts/feeds update -a
